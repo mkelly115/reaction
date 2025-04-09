@@ -13,11 +13,17 @@ const updateText = event => {
 
 const publishMessage = () => {
     dispatch(newMessage(text))
+};
+
+const handleKeyPress = event => {
+    if (event.key === 'Enter'){
+        publishMessage()
+    }
 }
     return(
         <div>
             <h3>Got something to say?</h3>
-            <input value={text} onChange={updateText}/>
+            <input value={text} onChange={updateText} onKeyDown={handleKeyPress}/>
             {''}
             <button onClick={publishMessage}>Publish it!</button>
         </div>
