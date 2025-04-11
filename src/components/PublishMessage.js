@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useAppContext } from "./hooks";
 import { newMessage } from "../state/actions";
 
-export default function PublishMessage(props){
+export default function PublishMessage(){
 
-const { dispatch } = props;
+const {dispatch} = useAppContext()
 
 const [text, setText] = useState('');
 

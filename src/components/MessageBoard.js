@@ -1,24 +1,23 @@
 import React from "react";
+import { useAppContext } from "./hooks";
 
+export default function MessageBoard() {
+  const {
+    state: { messages },
+  } = useAppContext();
 
-export default function MessageBoard({ messages }){
-
-    return(
-        <div>
-            {
-                messages.map(messageItem => {
-                    const { id, text, timestamp } = messageItem
-                    return(
-                        <div key={id}>
-                        <h4>{new Date(timestamp).toLocaleString()}</h4>
-                        <p>{text}</p>
-                        <hr />
-                        </div>
-                    )
-                })
-            }
-        </div>
-    )
-
-    
+  return (
+    <div>
+      {messages.map((messageItem) => {
+        const { id, text, timestamp } = messageItem;
+        return (
+          <div key={id}>
+            <h4>{new Date(timestamp).toLocaleString()}</h4>
+            <p>{text}</p>
+            <hr />
+          </div>
+        );
+      })}
+    </div>
+  );
 }
