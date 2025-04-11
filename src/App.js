@@ -5,6 +5,7 @@ import { NEW_MESSAGE } from "./state/types";
 import { newMessage } from "./state/actions";
 import PublishMessage from "./components/PublishMessage";
 import MessageBoard from "./components/MessageBoard";
+import './pubsub'
 
 
 function App() {
