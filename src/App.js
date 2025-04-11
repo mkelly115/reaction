@@ -3,6 +3,7 @@ import { initialState , reducer } from "./state/reducer";
 import { NEW_MESSAGE } from "./state/types";
 import { newMessage } from "./state/actions";
 import PublishMessage from "./components/PublishMessage";
+import MessageBoard from "./components/MessageBoard";
 
 
 function App() {
@@ -16,6 +17,8 @@ console.log('state', state)
      <h2>Reaction</h2>
      <hr />
      <PublishMessage dispatch={dispatch}/>
+     <hr />
+     <MessageBoard messages={state.messages}/>
     </div>
   );
 }
