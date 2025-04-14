@@ -5,7 +5,7 @@ import pubnubConfig from './pubnub.config.json'
 
 export const MESSAGE_CHANNEL = 'MESSAGE_CHANNEL';
 
-function PubSub(){
+export default function PubSub(){
 
     const pubnub = new PubNub(pubnubConfig);
 
@@ -27,7 +27,6 @@ function PubSub(){
     
 }
 
-export default PubSub;
 
 
 
