@@ -1,5 +1,6 @@
 import React from "react";
 import { useAppContext } from "./hooks";
+import CreateReaction from "./CreateReaction";
 
 export default function MessageBoard() {
   const {
@@ -15,6 +16,7 @@ export default function MessageBoard() {
             <h4>{new Date(timestamp).toLocaleString()}</h4>
             <p>{text}</p>
             <h4>- {username}</h4>
+            <CreateReaction />
             <hr />
           </div>
         );
