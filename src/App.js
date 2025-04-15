@@ -6,6 +6,7 @@ import { newMessage } from "./state/actions";
 import PublishMessage from "./components/PublishMessage";
 import MessageBoard from "./components/MessageBoard";
 import  PubSub  from './pubsub'
+import SetUserName from "./components/SetUsername";
 
 
 
@@ -32,6 +33,7 @@ console.log('state', state)
   return (
     <Context.Provider value={{ state, dispatch, pubsub }}>
      <h2>Reaction</h2>
+     <SetUserName />
      <hr />
      <PublishMessage/>
      <hr />
