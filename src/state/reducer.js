@@ -13,16 +13,19 @@ const REACTION_TYPES = REACTION_OBJECTS.map(
 export const reducer = (state, action) => {
   if (REACTION_TYPES.includes(action.type)) {
     let reactionsMap;
-
     const { messageId } = action.item;
+    const messageReactions = state.reactionsMap[messageId];
 
-    const messageReactions = state.reactionsMap[messageId]
-
-    if(messageReactions){
-        reactionsMap ={
-            ...state.reactionsMap,
-            [messageId]: [...messageReactions, action.item]
-        }
+    if (messageReactions) {
+      reactionsMap = {
+        ...state.reactionsMap,
+        [messageId]: [...messageReactions, action.item],
+      };
+    } else {
+      reactionsMap = {
+        ...state.reactionsMap,
+        [messageId]: [action.item],
+      };
     }
 
     return { ...state, reactionsMap };
